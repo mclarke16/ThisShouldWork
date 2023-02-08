@@ -14,12 +14,28 @@ public class Starship {
 		this.registryName = registry;
 		this.shipClass = shipClass;
 	}
+	public int getNumberOfPersonnel() {
+		int counter = 0;
+		for (int i = 0; i < crewList.size(); i++) {
+			counter += 1;
+		}
+		return counter;
+	}
 
 	@Override
 	public String toString() {
 		String s = "";
+		String member = null;
+		if(crewList.size() == 1)
+		{
+			member = "member";
+		}
+		else
+		{
+			member = "members";
+		}
 		s += getShipName() + ", " + getShipClass() + ". Registry: " + getRegistry() + "\n" + getNumberOfPersonnel()
-				+ " crew members assigned.\n";
+				+ " crew " + member + " assigned.\n";
 		for (int i = 0; i < crewList.size(); i++) {
 			// System.out.println("llllllll");
 			s += crewList.get(i).toString() + "\n";
@@ -32,14 +48,6 @@ public class Starship {
 	// to the starship and returns nothing
 	public void addCrewMember(CrewMember p) {
 		crewList.add(p);
-	}
-
-	public int getNumberOfPersonnel() {
-		int counter = 0;
-		for (int i = 0; i < crewList.size(); i++) {
-			counter += 1;
-		}
-		return counter;
 	}
 
 	// Added functionality to find a specific crew member.

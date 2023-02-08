@@ -23,7 +23,8 @@ public class Fleet {
 		File folder = new File(directoryName);
 		File[] listOfFiles = folder.listFiles();
 
-		for (int i = 0; i < listOfFiles.length; i++) {
+		for (int i = 0; i < listOfFiles.length; i++) 
+		{
 			firstLine = true;
 			if (listOfFiles[i].isFile() && listOfFiles[i].getName().endsWith(".csv")) {
 				try (BufferedReader buffer = new BufferedReader(new FileReader(listOfFiles[i]))) {
@@ -39,7 +40,7 @@ public class Fleet {
 							starShip.setShipClass(fields[2]);
 							starShipList.add(starShip);
 							//System.out.println(starShipList.toString());					
-						}
+						}  
 							// System.out.println(fields.length);
 							if (fields.length == 4) {
 								//System.out.println(fields.length);

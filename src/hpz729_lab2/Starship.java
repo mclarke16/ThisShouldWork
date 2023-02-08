@@ -18,22 +18,20 @@ public class Starship {
 	@Override
 	public String toString() {
 		String s = "";
-		s += getShipName() + ", " + getShipClass() + ". Registry: " + getRegistry() + "\n" + getNumberOfPersonnel() + " crew members assigned.\n";
-		for(int i = 0; i < crewList.size();i++)
-		{
-			//System.out.println("llllllll");
+		s += getShipName() + ", " + getShipClass() + ". Registry: " + getRegistry() + "\n" + getNumberOfPersonnel()
+				+ " crew members assigned.\n";
+		for (int i = 0; i < crewList.size(); i++) {
+			// System.out.println("llllllll");
 			s += crewList.get(i).toString() + "\n";
-		}		
-		
-		
+		}
+
 		return s;
 	}
 
 	// An addCrewMember(…) method which takes a CrewMember parameter and adds them
 	// to the starship and returns nothing
-	public void addCrewMember(CrewMember p) 
-	{
-			crewList.add(p);
+	public void addCrewMember(CrewMember p) {
+		crewList.add(p);
 	}
 
 	public int getNumberOfPersonnel() {
@@ -43,16 +41,17 @@ public class Starship {
 		}
 		return counter;
 	}
-	
-	//Added functionality to find a specific crew member. 
+
+	// Added functionality to find a specific crew member.
 	public CrewMember findCrewMember(String name, ArrayList<CrewMember> crewMember) {
-	    for (CrewMember s : crewMember) {
-	        if (s.getName().equals(name)) {
-	            return s;
-	        }
-	    }
-	    return null;
+		for (CrewMember s : crewMember) {
+			if (s.getName().equals(name)) {
+				return s;
+			}
+		}
+		return null;
 	}
+
 	/**
 	 * @return the name
 	 */
@@ -99,8 +98,7 @@ public class Starship {
 	 * @return the crewList
 	 */
 	public ArrayList<CrewMember> getCrewList() {
-		for(int i = 0; i < crewList.size()-1; i++)
-		{
+		for (int i = 0; i < crewList.size() - 1; i++) {
 			crewList.get(i);
 		}
 		return crewList;

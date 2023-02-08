@@ -95,4 +95,13 @@ public class Fleet {
 	public void setFleetName(String name) {
 		this.name = name;
 	}
+	
+	public Starship findStarship(String name, ArrayList<Starship> starShips) {
+	    for (Starship s : starShips) {
+	        if (s.getShipName().equals(name)) {
+	            return s;
+	        }
+	    }
+	    return null;
+	}
 }

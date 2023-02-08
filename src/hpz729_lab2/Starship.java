@@ -14,6 +14,7 @@ public class Starship {
 		this.registryName = registry;
 		this.shipClass = shipClass;
 	}
+
 	@Override
 	public String toString() {
 		String s = "";
@@ -42,7 +43,16 @@ public class Starship {
 		}
 		return counter;
 	}
-
+	
+	//Added functionality to find a specific crew member. 
+	public CrewMember findCrewMember(String name, ArrayList<CrewMember> crewMember) {
+	    for (CrewMember s : crewMember) {
+	        if (s.getName().equals(name)) {
+	            return s;
+	        }
+	    }
+	    return null;
+	}
 	/**
 	 * @return the name
 	 */

@@ -7,8 +7,8 @@ import java.io.FileReader;
 import java.util.ArrayList;
 
 public class Fleet {
+	
 	private String name;
-
 	private ArrayList<Starship> starShipList = new ArrayList<Starship>();
 
 	public Fleet(String name) {
@@ -19,7 +19,6 @@ public class Fleet {
 		String line = "";
 		String seperator = ",";
 		boolean firstLine = true;
-
 		File folder = new File(directoryName);
 		File[] listOfFiles = folder.listFiles();
 
@@ -33,24 +32,12 @@ public class Fleet {
 
 						if (firstLine) {
 							firstLine = false;
-							// System.out.println(fields.length);
-							Starship starShip = new Starship(null, null, null);
-							starShip.setShipName(fields[0]);
-							starShip.setRegistry(fields[1]);
-							starShip.setShipClass(fields[2]);
-							starShipList.add(starShip);
-							//System.out.println(starShipList.toString());					
+							Starship starShip = new Starship(fields[0], fields[1], fields[2]);
+							starShipList.add(starShip);					
 						}  
-							// System.out.println(fields.length);
 							if (fields.length == 4) {
-								//System.out.println(fields.length);
-								CrewMember crewMember = new CrewMember(null, null, null, null);
-								crewMember.setName(fields[0]);
-								crewMember.setRank(fields[1]);
-								crewMember.setPosition(fields[2]);
-								crewMember.setSpecies(fields[3]);
+								CrewMember crewMember = new CrewMember(fields[0], fields[1], fields[2], fields[3]);
 								starShipList.get(starShipList.size() - 1).addCrewMember(crewMember);
-								//System.out.println(crewMember.toString());
 							}
 
 						}

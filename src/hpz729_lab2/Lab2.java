@@ -15,7 +15,7 @@ public class Lab2 {
 			// in coming weeks!)
 			e.printStackTrace();
 		}
-		unitedFederation.toString();
+		System.out.println(unitedFederation.toString());
 		//System.out.println(unitedFederation);
 	}
 

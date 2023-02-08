@@ -14,14 +14,16 @@ public class Starship {
 		this.registryName = registry;
 		this.shipClass = shipClass;
 	}
-
+	@Override
 	public String toString() {
-		String s = crewList.toString();
-		for(int i = 0; i < crewList.size() - 1;i++)
+		String s = "";
+		s += getShipName() + ", " + getShipClass() + ". Registry: " + getRegistry() + "\n" + getNumberOfPersonnel() + " crew members assigned.\n";
+		for(int i = 0; i < crewList.size();i++)
 		{
-			s += crewList.get(i).toString()+ "\n";
+			//System.out.println("llllllll");
+			s += crewList.get(i).toString() + "\n";
 		}		
-		s += "\n " + getName()  + ", " + getShipClass() + ". Registry: " + getRegistry();
+		
 		
 		return s;
 	}
@@ -44,14 +46,14 @@ public class Starship {
 	/**
 	 * @return the name
 	 */
-	public String getName() {
+	public String getShipName() {
 		return name;
 	}
 
 	/**
 	 * @param name the name to set
 	 */
-	public void setName(String name) {
+	public void setShipName(String name) {
 		this.name = name;
 	}
 

@@ -8,13 +8,13 @@ public class CrewMember {
 	private String species;
 	private String assignment;
 
-	public CrewMember(String name, String position, String rank, String species, String assignment) {
-		this.name = name;
-		this.position = position;
-		this.rank = rank;
-		this.species = species;
-		this.assignment = assignment;
-	}
+//	public CrewMember(String name, String position, String rank, String species, String assignment) {
+//		this.name = name;
+//		this.position = position;
+//		this.rank = rank;
+//		this.species = species;
+//		this.assignment = assignment;
+//	}
 
 	public CrewMember(String name, String position, String rank, String species) {
 		this.name = name;
@@ -24,7 +24,7 @@ public class CrewMember {
 	}
 	@Override
 	public String toString() {
-		String s = "- " + getName() + "  (" + getRank() + ")" + "- " + getPosition() + " [" + getSpecies() + "] " + getAssignment() + "\n";
+		String s = "- " + getName() + "  (" + getPosition() + ")" + "- " + getRank() + " [" + getSpecies() + "] ";// + getAssignment() + "\n";
 		return s;
 	}
 	public String getName() {
